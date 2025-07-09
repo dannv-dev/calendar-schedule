@@ -9,8 +9,9 @@ import { CalendarHeader } from "@/components/calendar/CalendarHeader";
 import { CalendarGrid } from "@/components/calendar/CalendarGrid";
 import { EventModal } from "@/components/calendar/EventModal";
 import { Button } from "@/components/ui/button";
-import { Calendar as CalendarIcon, Moon, Sun } from "lucide-react";
+import { Calendar as CalendarIcon, Moon, Sun, List } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Link } from "react-router-dom";
 
 export default function Index() {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -156,6 +157,12 @@ export default function Index() {
                   <Moon className="h-4 w-4" />
                 )}
               </Button>
+              <Link to="/events">
+                <Button variant="outline" className="flex items-center gap-2">
+                  <List className="w-4 h-4" />
+                  Events
+                </Button>
+              </Link>
               <Button variant="outline" onClick={handleCreateEvent}>
                 New Event
               </Button>
